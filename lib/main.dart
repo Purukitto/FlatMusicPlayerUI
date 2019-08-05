@@ -36,147 +36,178 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/ditf.jpg"),
-            fit: BoxFit.cover,
-            colorFilter: new ColorFilter.mode(
-                Colors.black.withOpacity(0.2), BlendMode.dstATop),
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/ditf.jpg"),
+              fit: BoxFit.cover,
+              colorFilter: new ColorFilter.mode(
+                  Colors.black.withOpacity(0.2), BlendMode.dstATop),
+            ),
           ),
         ),
-      ),
-      new Scaffold(
-        backgroundColor: Colors.black12,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
-          title: Text(
-            "Now Playing",
-            style:
-                TextStyle(color: Colors.white, fontFamily: "OverpassMonoBold"),
-          ),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
+        new Scaffold(
+          backgroundColor: Colors.black12,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            leading: IconButton(
               icon: Icon(
-                Icons.menu,
+                Icons.arrow_back_ios,
                 color: Colors.white,
               ),
               onPressed: () {},
-            )
-          ],
-        ),
-        body: new Column(
-          children: <Widget>[
-            SizedBox(
-              height: 80,
             ),
-            Center(
-              child: Container(
-                width: 250,
-                height: 250,
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.5),
-                          shape: BoxShape.circle),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: _buildRadialSeek(),
-                      ),
-                    ),
-                    Center(
-                      child: Container(
-                        height: 200,
-                        width: 200,
+            title: Text(
+              "Now Playing",
+              style: TextStyle(
+                  color: Colors.white, fontFamily: "OverpassMonoBold"),
+            ),
+            centerTitle: true,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              )
+            ],
+          ),
+          body: new Column(
+            children: <Widget>[
+              SizedBox(
+                height: 80,
+              ),
+              Center(
+                child: Container(
+                  width: 250,
+                  height: 250,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(.5),
+                            shape: BoxShape.circle),
                         child: Padding(
-                          padding: const EdgeInsets.all(3),
-                          child: ClipOval(
-                            clipper: MClipper(),
-                            child: Image.asset(
-                              "assets/ditf.jpg",
-                              fit: BoxFit.cover,
+                          padding: const EdgeInsets.all(9),
+                          child: _buildRadialSeek(),
+                        ),
+                      ),
+                      Center(
+                        child: Container(
+                          height: 200,
+                          width: 200,
+                          child: Padding(
+                            padding: const EdgeInsets.all(3),
+                            child: ClipOval(
+                              clipper: MClipper(),
+                              child: Image.asset(
+                                "assets/ditf.jpg",
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Column(
-              children: <Widget>[
-                Text(
-                  "Mika Nakashima",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30.0,
-                    fontFamily: "OverpassMono",
-                  ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                Text(
-                  "Kiss Of Death",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
-                    fontFamily: "OverpassMonoBold",
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            Container(
-              width: 350,
-              height: 150,
-              child: Stack(
+              SizedBox(
+                height: 30,
+              ),
+              Column(
                 children: <Widget>[
-                  Center(
-                    child: Container(
-                      height: 65,
-                      width: 290,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 3,
-                          ),
-                          borderRadius: BorderRadius.circular(35)),
-                      child: Row(
-                        children: <Widget>[
-                          Icon(
-                            Icons.fast_rewind,
-                            size: 55,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
+                  Text(
+                    "Mika Nakashima",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30.0,
+                      fontFamily: "OverpassMono",
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    "Kiss Of Death",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                      fontFamily: "OverpassMonoBold",
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
-      )
-    ]);
+              SizedBox(
+                height: 100,
+              ),
+              Container(
+                width: 350,
+                height: 150,
+                child: Stack(
+                  children: <Widget>[
+                    Center(
+                      child: Container(
+                        height: 65,
+                        width: 290,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 3,
+                            ),
+                            borderRadius: BorderRadius.circular(35)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 25,
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.fast_rewind,
+                                size: 55,
+                                color: Colors.white,
+                              ),
+                              Expanded(
+                                child: Container(),
+                              ),
+                              Icon(
+                                Icons.fast_forward,
+                                color: Colors.white,
+                                size: 55,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        width: 92,
+                        height: 92,
+                        decoration: BoxDecoration(
+                            color: Colors.white, shape: BoxShape.circle),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.play_arrow,
+                            size: 55,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
   }
 }
 
