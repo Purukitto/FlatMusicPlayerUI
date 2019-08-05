@@ -48,8 +48,10 @@ class _HomeState extends State<Home> {
           ),
           onPressed: () {},
         ),
-        title: Text("Now Playing",
-            style: TextStyle(color: Colors.white, fontFamily: "Nexa")),
+        title: Text(
+          "Now Playing",
+          style: TextStyle(color: Colors.white, fontFamily: "OverpassMonoBold"),
+        ),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -63,6 +65,9 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: <Widget>[
+          SizedBox(
+            height: 25,
+          ),
           Center(
             child: Container(
               width: 250,
@@ -82,11 +87,14 @@ class _HomeState extends State<Home> {
                     child: Container(
                       height: 200,
                       width: 200,
-                      child: ClipOval(
-                        clipBehavior: MClipper(),
-                        child: Image.asset(
-                          "ditf.jpg",
-                          fit: BoxFit.cover,
+                      child: Padding(
+                        padding: const EdgeInsets.all(3),
+                        child: ClipOval(
+                          clipper: MClipper(),
+                          child: Image.asset(
+                            "assets/ditf.jpg",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -94,7 +102,46 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Column(
+            children: <Widget>[
+              Text(
+                "Mika Nakashima",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30.0,
+                  fontFamily: "OverpassMono",
+                ),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              Text(
+                "Kiss Of Death",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontFamily: "OverpassMonoBold",
+                ),
+              ),
+            ],
+          ),
+          Container(
+            width: 350,
+            height: 150,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: 65,
+                  width: 290,
+                  decoration: BoxDecoration(border: Bord),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -107,5 +154,10 @@ class MClipper extends CustomClipper<Rect> {
     return Rect.fromCircle(
         center: Offset(size.width / 2, size.height / 2),
         radius: min(size.width, size.height) / 2);
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Rect> oldClipper) {
+    return true;
   }
 }
