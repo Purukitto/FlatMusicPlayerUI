@@ -1,5 +1,5 @@
 # Flo Music
 
-Minimal Music App using Flutter
+Minimal Music App UI using Flutter
 
 //In development//
