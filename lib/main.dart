@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttery_seekbar/fluttery_seekbar.dart';
 import 'dart:math';
 
-void main() => runApp(MaterialApp(
+/*
+void main() => runApp(
+      MaterialApp(
+        home: Home(),
+      ),
+    );
+*/
+
+void main() {
+  SystemChrome.setEnabledSystemUIOverlays([]);
+  runApp(
+    MaterialApp(
       home: Home(),
-    ));
+    ),
+  );
+}
 
 class Home extends StatefulWidget {
   @override
