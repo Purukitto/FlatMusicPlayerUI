@@ -137,7 +137,7 @@ class _HomeState extends State<Home> {
                 Container(
                   height: 65,
                   width: 290,
-                  decoration: BoxDecoration(border: Bord),
+                  decoration: BoxDecoration(border: Border),
                 )
               ],
             ),
