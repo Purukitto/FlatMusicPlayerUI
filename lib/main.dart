@@ -58,12 +58,12 @@ class _HomeState extends State<Home> {
               image: AssetImage("assets/ditf.jpg"),
               fit: BoxFit.cover,
               colorFilter: new ColorFilter.mode(
-                  Colors.black.withOpacity(0.2), BlendMode.dstATop),
+                  Colors.black.withOpacity(0.1), BlendMode.dstATop),
             ),
           ),
         ),
         new Scaffold(
-          backgroundColor: Colors.black12,
+          backgroundColor: Colors.black,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0.0,
