@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
             actions: <Widget>[
               IconButton(
                 icon: Icon(
-                  Icons.menu,
+                  Icons.playlist_play,
                   color: Colors.white,
                 ),
                 onPressed: () {},
