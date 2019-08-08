@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttery_seekbar/fluttery_seekbar.dart';
 import 'dart:math';
+import 'package:flomusic/components/radial_seek.dart';
 
 void main() {
   SystemChrome.setEnabledSystemUIOverlays([]);
@@ -18,28 +18,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  double _thumbPercent = 0.4;
-
-  Widget _buildRadialSeek() {
-    return RadialSeekBar(
-      trackColor: Colors.white.withOpacity(.5),
-      trackWidth: 2.0,
-      progressColor: Colors.white,
-      progressWidth: 5.0,
-      thumbPercent: _thumbPercent,
-      thumb: CircleThumb(
-        color: Colors.white,
-        diameter: 20.0,
-      ),
-      progress: _thumbPercent,
-      onDragUpdate: (double percent) {
-        setState(() {
-          _thumbPercent = percent;
-        });
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -50,7 +28,7 @@ class _HomeState extends State<Home> {
               image: AssetImage("assets/ditf.jpg"),
               fit: BoxFit.cover,
               colorFilter: new ColorFilter.mode(
-                  Colors.black.withOpacity(0.1), BlendMode.dstATop),
+                  Colors.black.withOpacity(0.2), BlendMode.dstATop),
             ),
           ),
         ),
@@ -99,7 +77,7 @@ class _HomeState extends State<Home> {
                             shape: BoxShape.circle),
                         child: Padding(
                           padding: const EdgeInsets.all(9),
-                          child: _buildRadialSeek(),
+                          child: BuildSeek(),
                         ),
                       ),
                       Center(
