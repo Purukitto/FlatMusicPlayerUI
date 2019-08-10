@@ -1,5 +1,3 @@
-# Flo Music
+# Flat Music Player UI
 
-Minimal Music App UI using Flutter
-
-//In development//
+Minimal practice Music App UI using Flutter
