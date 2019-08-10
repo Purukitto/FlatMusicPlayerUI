@@ -7,7 +7,7 @@ class BuildSeek extends StatefulWidget {
   _RadialState createState() => new _RadialState();
 }
 
-class _RadialState extends State<BuildSeek> {
+class _RadialState extends State<BuildSeek> {   
   Widget build(buildRadialSeek) {
     return RadialSeekBar(
       trackColor: Colors.white.withOpacity(.5),
